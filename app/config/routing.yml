@@ -1,3 +1,7 @@
+gl_home:
+    resource: "@GLHomeBundle/Resources/config/routing.yml"
+    prefix:   /
+
 app:
     resource: '@AppBundle/Controller/'
     type: annotation
