@@ -1,0 +1,20 @@
+GL\HomeBundle\Entity\Notification:
+    type: entity
+    table: null
+    repositoryClass: GL\HomeBundle\Repository\NotificationRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        user:
+            type: integer
+        date:
+            type: datetime
+        description:
+            type: text
+        statut:
+            type: boolean
+    lifecycleCallbacks: {  }

@@ -1,0 +1,19 @@
+GL\HomeBundle\Entity\Evenement:
+    type: entity
+    table: null
+    repositoryClass: GL\HomeBundle\Repository\EvenementRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        titre:
+            type: string
+            length: 255
+        date:
+            type: datetime
+        description:
+            type: text
+    lifecycleCallbacks: {  }

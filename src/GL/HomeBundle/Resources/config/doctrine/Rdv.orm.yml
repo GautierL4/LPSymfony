@@ -1,0 +1,24 @@
+GL\HomeBundle\Entity\Rdv:
+    type: entity
+    table: null
+    repositoryClass: GL\HomeBundle\Repository\RdvRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        date:
+            type: datetime
+        conseille:
+            type: integer
+        candidat:
+            type: integer
+        typeRDV:
+            type: string
+            length: 255
+        status:
+            type: string
+            length: 255
+    lifecycleCallbacks: {  }

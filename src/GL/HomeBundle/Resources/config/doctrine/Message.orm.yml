@@ -1,0 +1,21 @@
+GL\HomeBundle\Entity\Message:
+    type: entity
+    table: null
+    repositoryClass: GL\HomeBundle\Repository\MessageRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        user:
+            type: integer
+        destinataire:
+            type: integer
+        sujet:
+            type: string
+            length: 255
+        corps:
+            type: text
+    lifecycleCallbacks: {  }

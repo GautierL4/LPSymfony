@@ -1,0 +1,32 @@
+GL\HomeBundle\Entity\Document:
+    type: entity
+    table: null
+    repositoryClass: GL\HomeBundle\Repository\DocumentRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        titre:
+            type: string
+            length: 255
+        description:
+            type: text
+        etat:
+            type: string
+            length: 255
+            nullable: true
+        rubrique:
+            type: string
+            length: 255
+        version:
+            type: float
+        candidat:
+            type: integer
+        path:
+            type: string
+            length: 255
+            unique: true
+    lifecycleCallbacks: {  }

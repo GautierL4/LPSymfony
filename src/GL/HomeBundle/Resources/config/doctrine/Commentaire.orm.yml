@@ -1,0 +1,24 @@
+GL\HomeBundle\Entity\Commentaire:
+    type: entity
+    table: null
+    repositoryClass: GL\HomeBundle\Repository\CommentaireRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        corps:
+            type: text
+        commentairePere:
+            type: integer
+        document:
+            type: integer
+        conseiller:
+            type: integer
+        candidat:
+            type: integer
+        enfants:
+            type: integer
+    lifecycleCallbacks: {  }
