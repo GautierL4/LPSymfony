@@ -8,4 +8,14 @@ GL\HomeBundle\Entity\User:
             id: true
             generator:
                 strategy: AUTO
+    oneToMany:
+        messagesEnvoye:
+            targetEntity: Message
+            mappedBy: auteur
+        messagesRecu:
+            targetEntity: Message
+            mappedBy: destinataire
+        notifications:
+            targetEntity: Notification
+            mappedBy: user
     lifecycleCallbacks: {  }

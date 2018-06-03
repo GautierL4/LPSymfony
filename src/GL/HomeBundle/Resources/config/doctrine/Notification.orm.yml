@@ -9,12 +9,14 @@ GL\HomeBundle\Entity\Notification:
             generator:
                 strategy: AUTO
     fields:
-        user:
-            type: integer
         date:
             type: datetime
         description:
             type: text
         statut:
             type: boolean
+    manyToOne:
+        user:
+            targetEntity: User
+            inversedBy: notifications
     lifecycleCallbacks: {  }

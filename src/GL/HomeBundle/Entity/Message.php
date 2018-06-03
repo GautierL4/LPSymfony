@@ -1,6 +1,7 @@
 <?php
 
 namespace GL\HomeBundle\Entity;
+use Doctrine\ORM\Mapping as ORM;
 
 /**
  * Message
@@ -15,7 +16,7 @@ class Message
     /**
      * @var int
      */
-    private $user;
+    private $auteur;
 
     /**
      * @var int

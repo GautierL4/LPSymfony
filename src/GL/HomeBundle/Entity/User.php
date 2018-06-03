@@ -7,6 +7,8 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * User
+ * 
+ * @ORM\Table(name="patient")
  */
 class User extends BaseUser
 {
@@ -15,6 +17,13 @@ class User extends BaseUser
      */
     protected $id;
 
+    private $messagesEnvoye;
+
+    private $messagesRecu;
+
+    private $notifications;
+
+     
     /**
      * Get id
      *

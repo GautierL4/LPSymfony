@@ -9,13 +9,16 @@ GL\HomeBundle\Entity\Message:
             generator:
                 strategy: AUTO
     fields:
-        user:
-            type: integer
-        destinataire:
-            type: integer
         sujet:
             type: string
             length: 255
         corps:
             type: text
+    manyToOne:
+        auteur:
+            targetEntity: User
+            inversedBy: messagesEnvoye
+        destinataire:
+            targetEntity: User
+            inversedbBy: messagesRecu
     lifecycleCallbacks: {  }
