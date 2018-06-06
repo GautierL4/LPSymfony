@@ -63,7 +63,7 @@ class MessageController extends Controller
             ->getRepository('GLHomeBundle:Message')
             ->findBy(array('auteur' => $user));
 
-        return $this->render('GLHome/Message/mailbox.html.twig', array(
+        return $this->render('@GLHome/Message/mailbox.html.twig', array(
             'messages' => $messageEnvoye
         ));
     }
