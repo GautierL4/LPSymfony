@@ -1,8 +1,10 @@
-{% extends 'base.html.twig' %}
+{% extends '@GLHome/Message/mail.html.twig' %}
 
-{% block content %}
+{% block mailcontent %}
 
-<div class="rcv-mail-form">
-  {{ form(form) }}
-</div>
+    <div class="row justify-content-center">
+    <div class="col-12">
+    {{ form(form) }}
+    </div>
+    </div>
 {% endblock %}

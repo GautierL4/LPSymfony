@@ -37,6 +37,9 @@
                 <a class="nav-link" href="#">Contact</a>
                 </li>
                 {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ path('gl_home_mailpage') }}">Message</a>
+                    </li>
                     <li class="nav-item active">
                         <a class="nav-link" href="{{ path('fos_user_security_logout') }}"> {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}</a>
                     </li>
@@ -48,9 +51,9 @@
             </ul>
             </div>
     </nav>
-    <div class="container">
-        {% block content %}{% endblock %}
-    </div>
+        <div class="container">
+            {% block content %}{% endblock %}
+        </div>
         {% block javascripts %}{% endblock %}
         <script src="{{ asset('js/jquery.min.js') }}"></script>
         <script src="{{ asset('js/bootstrap.min.js') }}"></script>

@@ -10,4 +10,6 @@ gl_home_sendmail:
     path: /mail/sendmail
     defaults: { _controller: GLHomeBundle:Message:sendMail}
 
-    
+gl_home_showmail:
+    path:   /mail/show/{id}
+    defaults: { _controller: GLHomeBundle:Message:show }

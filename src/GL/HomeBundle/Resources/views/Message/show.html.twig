@@ -1,0 +1,23 @@
+{% extends '@GLHome/Message/mail.html.twig' %}
+
+{% block mailcontent %}
+
+        <div class="row justify-content-center">
+            <div class="col-10">
+            
+                <div class="card">
+                    
+                    <div class="card-header">
+                        <p>Sujet : {{ message.sujet }}</p>
+                    </div>
+                    <div class="card-body">
+                        <p>{{ message.corps }}</p>
+                    </div>
+                    <div class="card-footer">
+                        <p>Auteur : {{ message.auteur }}</p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+{% endblock %}

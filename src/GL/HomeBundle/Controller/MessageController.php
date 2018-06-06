@@ -9,13 +9,13 @@ use GL\HomeBundle\Form\MessageType;
 
 class MessageController extends Controller
 {
-    public function showAction()
-    {
-        return $this->render('@GLHome/Accueil/homepage.html.twig');
-    }
 
     public function sendMailAction(Request $request){
         $message = new Message();
+
+        $user = $this->getUser();
+        $message->setAuteur($user);
+
         $form = $this->createForm(MessageType::class, $message);
 
         if($request->isMethod('POST') && $form->handleRequest($request)->isValid()) {
@@ -34,9 +34,35 @@ class MessageController extends Controller
         ));
     }
 
-    public function showMailBoxAction()
+    public function showMailBoxAction(Request $request)
     {
-        
+
+        $em = $this->getDoctrine()->getManager();
+
+        $user = $this->getUser();
+        $messagesRecu = $em
+            ->getRepository('GLHomeBundle:Message')
+            ->findBy(array('destinataire' => $user));
+
+        return $this->render('@GLHome/Message/mailbox.html.twig', array(
+            'user' => $user,
+            'messagesRecu' => $messagesRecu
+        ));
+
+    }
+
+    public function showAction($id){
+
+        $em = $this->getDoctrine()->getManager();
+
+        $message = $em
+            ->getRepository('GLHomeBundle:Message')
+            ->find($id);
+
+        return $this->render('@GLHome/Message/show.html.twig', array(
+            'message' => $message
+        ));
+
     }
 
     public function createAction(Request $request)

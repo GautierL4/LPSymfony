@@ -12,16 +12,25 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 
 class MessageType extends AbstractType
 {
+
+    private $userId;
     /**
      * {@inheritdoc}
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
+
+        // $userId = $options['userId'];
+
         $builder
-            ->add('auteur', EntityType::class, array(
+            /*->add('auteur', EntityType::class, array(
                 'class' => 'GLHomeBundle:User',
                 'choice_label' => 'username',
-            ))
+                'query_builder' => function (EntityRepository $er){
+                    return $er->createQueryBuilder('u')
+                        ->where('u.id = '.$userId);
+                }
+            ))*/
             ->add('sujet', TextType::class)
             ->add('destinataire', EntityType::class, array(
                 'class' => 'GLHomeBundle:User',
