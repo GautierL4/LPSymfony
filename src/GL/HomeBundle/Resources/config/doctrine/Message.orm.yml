@@ -20,5 +20,5 @@ GL\HomeBundle\Entity\Message:
             inversedBy: messagesEnvoye
         destinataire:
             targetEntity: User
-            inversedbBy: messagesRecu
+            inversedBy: messagesRecu
     lifecycleCallbacks: {  }

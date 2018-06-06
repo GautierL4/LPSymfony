@@ -25,6 +25,7 @@ security:
         main:
             pattern: ^/
             form_login:
+                default_target_path: gl_home_mailpage
                 provider: fos_userbundle
                 csrf_token_generator: security.csrf.token_manager
 
