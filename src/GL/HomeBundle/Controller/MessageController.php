@@ -14,9 +14,12 @@ class MessageController extends Controller
         $message = new Message();
 
         $user = $this->getUser();
+        $userId = $user->getId();
         $message->setAuteur($user);
 
-        $form = $this->createForm(MessageType::class, $message);
+        $form = $this->createForm(MessageType::class, $message, array(
+            'userId' => $user->getId(),
+        ));
 
         if($request->isMethod('POST') && $form->handleRequest($request)->isValid()) {
             $em = $this->getDoctrine()->getManager();
@@ -46,9 +49,23 @@ class MessageController extends Controller
 
         return $this->render('@GLHome/Message/mailbox.html.twig', array(
             'user' => $user,
-            'messagesRecu' => $messagesRecu
+            'messages' => $messagesRecu
         ));
 
+    }
+
+    public function showSendMailAction(Request $request)
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $user = $this->getUser();
+        $messageEnvoye = $em
+            ->getRepository('GLHomeBundle:Message')
+            ->findBy(array('auteur' => $user));
+
+        return $this->render('GLHome/Message/mailbox.html.twig', array(
+            'messages' => $messageEnvoye
+        ));
     }
 
     public function showAction($id){
