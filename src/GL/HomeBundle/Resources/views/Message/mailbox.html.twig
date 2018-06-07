@@ -1,6 +1,23 @@
 {% extends '@GLHome/Message/mail.html.twig' %}
 
 {% block mailcontent %}
+
+    <div class="row justify-content-center mail-template">
+            <div class="col-sm-9">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="row justify-content-center">
+                            <div class="col-sm-3 header-maillist">
+                                <span class="badge badge-info">Auteur</span>
+                            </div>
+                            <div class="col-sm-3 offset-md-1 header-maillist">
+                                <span class="badge badge-info">Sujet</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     {% for message in messages %}
 
         <div class="row justify-content-center mail-template">
@@ -8,12 +25,14 @@
                 <div class="card">
                     <div class="card-body">
                         <a class="btn btn-sm btn-block" href="{{ path('gl_home_showmail', {'id': message.id}) }}" >
+                        <div class="row justify-content-center">
                             <div class="col-sm-3">
-                                <p>Auteur : {{ message.auteur }}</p>
+                                <span class="badge badge-dark">{{ message.auteur }}</span>
                             </div>
                             <div class="col-sm-3 offset-md-1">
-                                <p>Sujet : {{ message.sujet }}</p>
+                                <span class="badge badge-dark">{{ message.sujet }}</span>
                             </div>
+                        </div>
                         </a>
                     </div>
                 </div>
