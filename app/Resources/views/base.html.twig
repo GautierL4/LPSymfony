@@ -38,7 +38,10 @@
                 </li>
                 {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ path('gl_home_mailpage') }}">Message</a>
+                        <a class="nav-link" href="{{ path('gl_home_mailpage') }}">Message </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ path('gl_home_shownotifications') }}"> Notification </a>
                     </li>
                     <li class="nav-item active">
                         <a class="nav-link" href="{{ path('fos_user_security_logout') }}"> {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}</a>

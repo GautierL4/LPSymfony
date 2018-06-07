@@ -14,8 +14,7 @@ body{
 .inscription-panel{
     border-radius: 10px;
     background-color: #4286f4;
-    padding-top: 20px;
-    padding-bottom: 20px;
+    padding: 50px;
     color: white;
 }
 
@@ -25,12 +24,12 @@ body{
 
 .intro-content{
     text-align: center;
-    padding-top: 20px;
+    padding: 50px;
 }
 
 .temoignage{
     background-color:#f75959;
-    padding: 20px;
+    padding: 50px;
     border-radius: 10px;
 }
 
@@ -39,4 +38,9 @@ body{
 }
 .temoignage-content{
     padding-top: 20px;
+}
+
+.notification-template{
+    padding: 20px;
+    text-align: center;
 }

@@ -8,7 +8,7 @@ gl_home_mailpage:
 
 gl_home_sendmail:
     path: /mail/sendmail
-    defaults: { _controller: GLHomeBundle:Message:sendMail}
+    defaults: { _controller: GLHomeBundle:Message:sendMail }
 
 gl_home_showmail:
     path:   /mail/show/{id}
@@ -16,4 +16,12 @@ gl_home_showmail:
 
 gl_home_sendmailpage:
     path:   /mail/showsendmail
-    defaults: { _controller: GLHomeBundle:Message:showSendMail}
+    defaults: { _controller: GLHomeBundle:Message:showSendMail }
+
+gl_home_sendnotification:
+    path:   /notification/send
+    defaults: { _controller: GLHomeBundle:Notification:create }
+
+gl_home_shownotifications:
+    path:   /notification/show
+    defaults: { _controller: GLHomeBundle:Notification:show }
