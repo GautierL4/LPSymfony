@@ -1,77 +1,74 @@
-Symfony Standard Edition
-========================
+# Projet Symfony - Licence Pro 2017-2018
 
-**WARNING**: This distribution does not support Symfony 4. See the
-[Installing & Setting up the Symfony Framework][15] page to find a replacement
-that fits you best.
+## Groupe 3 - Binôme : Gautier LAURENT
 
-Welcome to the Symfony Standard Edition - a fully-functional Symfony
-application that you can use as the skeleton for your new applications.
+### Mission : Gestion de la messagerie et des notifications
 
-For details on how to download and get started with Symfony, see the
-[Installation][1] chapter of the Symfony Documentation.
+Ma mission était divisé en trois partie :
 
-What's inside?
---------------
+* Page d'accueil et menu
+* Gestion de la messagerie
+* Gestion des notifications
 
-The Symfony Standard Edition is configured with the following defaults:
+### Page d'accueil et menu
 
-  * An AppBundle you can use to start coding;
+Le menu se personnalise si l'utilisateur est connecté. Les boutons Message,Notification et Déconnexion apparaissent.
 
-  * Twig as the only configured template engine;
+La page d'accueil permet la redirection vers les autres fonctionnalités, cependant ces dernières ne sont pas intégré à mon rendu et donc inaccessible.
 
-  * Doctrine ORM/DBAL;
+L'absence des autres fonctionnalités implique aussi l'absence de gestion d'utilisateur, il n'y a donc pas de différence entre un candidat et un conseiller.
 
-  * Swiftmailer;
 
-  * Annotations enabled for everything.
+### Messagerie
 
-It comes pre-configured with the following bundles:
+Cette fonctionnalité est accessible lorsque l'utilisateur se connecte. Il lui suffit de cliquer sur le bouton Message sur le menu.
 
-  * **FrameworkBundle** - The core Symfony framework bundle
+Elle permet :
+* L'accès à la boîte de messagerie (Les messages reçu)
+  * Accès à la listes des messages reçu
+  * Voir un message lors d'un clique dessus
+* Ecrire un message à un autre membre
+  * Il s'agit d'un formulaire qui permet de :
+    * Renseigner un sujet
+    * Choisir un destinataire parmis la liste des utilisateurs
+    * Renseigner le corps du message
+* Voir les messages envoyés
+  * Accès à la liste des messages envoyés
+  * Voir un message envoyés lors d'un clique dessus
 
-  * [**SensioFrameworkExtraBundle**][6] - Adds several enhancements, including
-    template and routing annotation capability
+### Notifications
 
-  * [**DoctrineBundle**][7] - Adds support for the Doctrine ORM
+Cette fonctionnalité permet d'accèder à la liste des notifications reçu.
+Il faut savoir que les notifications sont crée lors d'action de la part d'un candidat/conseiller dans la section Upload/Download de fichiers. Mon groupe n'ayant pas de binôme s'occupant de cette partie la, elle n'est pas intégré et donc des notifications de test sont crée manuellement.
 
-  * [**TwigBundle**][8] - Adds support for the Twig templating engine
+### **Information sur l'utilisation de l'application** 
 
-  * [**SecurityBundle**][9] - Adds security by integrating Symfony's security
-    component
+Pour accèder à l'application il faut cloner le repertoire git sur votre repertoire correspondant à votre serveur Web.
 
-  * [**SwiftmailerBundle**][10] - Adds support for Swiftmailer, a library for
-    sending emails
+Pour déployer l'application et ces dépendances il faut faire les commandes suivantes :
 
-  * [**MonologBundle**][11] - Adds support for Monolog, a logging library
+`composer install`
 
-  * **WebProfilerBundle** (in dev/test env) - Adds profiling functionality and
-    the web debug toolbar
+Pour installer les dépendances lié au projet
 
-  * **SensioDistributionBundle** (in dev/test env) - Adds functionality for
-    configuring and working with Symfony distributions
+`php bin/console doctrine:database:create`
 
-  * [**SensioGeneratorBundle**][13] (in dev env) - Adds code generation
-    capabilities
+Pour crée la base de données
 
-  * [**WebServerBundle**][14] (in dev env) - Adds commands for running applications
-    using the PHP built-in web server
+`php bin/console doctrine:schema:update --force`
 
-  * **DebugBundle** (in dev/test env) - Adds Debug and VarDumper component
-    integration
+Pour mapper les entités dans la base de données
 
-All libraries and bundles included in the Symfony Standard Edition are
-released under the MIT or BSD license.
+Si vous souhaitez créer un utilisateur, vous pouvez accéder à un formulaire en cliquant sur le bouton inscription sur la page d'accueil.
+Il est aussi accessible à l'url suivante :
 
-Enjoy!
+`http://localhost/LPSymfony/web/app_dev.php/register/` 
 
-[1]:  https://symfony.com/doc/3.4/setup.html
-[6]:  https://symfony.com/doc/current/bundles/SensioFrameworkExtraBundle/index.html
-[7]:  https://symfony.com/doc/3.4/doctrine.html
-[8]:  https://symfony.com/doc/3.4/templating.html
-[9]:  https://symfony.com/doc/3.4/security.html
-[10]: https://symfony.com/doc/3.4/email.html
-[11]: https://symfony.com/doc/3.4/logging.html
-[13]: https://symfony.com/doc/current/bundles/SensioGeneratorBundle/index.html
-[14]: https://symfony.com/doc/current/setup/built_in_web_server.html
-[15]: https://symfony.com/doc/current/setup.html
+ou
+
+`http://localhost/LPSymfony/web/app.php/register/`
+
+Si vous souhaitez crée une notification manuellement, il faut utilisé le lien suivant une fois connecté :
+
+`http://localhost/LPSymfony/web/app.php/notification/send`
+
